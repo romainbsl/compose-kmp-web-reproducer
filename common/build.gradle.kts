@@ -2,7 +2,7 @@ import org.jetbrains.compose.compose
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose") version "1.0.0-beta1"
+    id("org.jetbrains.compose") version "1.0.0-beta3"
     id("com.android.library")
     `maven-publish`
 
@@ -24,12 +24,7 @@ kotlin {
         }
     }
     js(IR) {
-        binaries.executable()
-        browser {
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
-        }
+        browser()
     }
     sourceSets {
         val commonMain by getting {
